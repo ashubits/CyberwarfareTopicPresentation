@@ -1,0 +1,14 @@
+
+- Topic: Malware involvement in Wars (tentative)
+
+  - Introduction (15 min)
+    - Why Virtual war?
+    - Virtual War strategy with an example
+    - Threats
+    
+  - Timeline of various attacks executed in War (20 min)
+    - Major Malware involved
+    
+  - Detective measures (10 min)
+    - Recomendations to nave users
+
