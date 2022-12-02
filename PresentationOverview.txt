@@ -1,6 +1,6 @@
 
 For Global team
-- Topic: Advanced War zones  (tentative)
+- Topic: Advanced War zones  (tentative) (55-60 min)
 
   - Introduction (15 min)
     - Why Virtual war?
@@ -13,12 +13,13 @@ For Global team
     
   - Detective measures (10 min)
     - Recomendations to nave users
+  - Q&A (10 min)
 
 
 
 For our team
 
-- Topic: Malware involvement in Russia Ukrain War (tentative)
+- Topic: Malware involvement in Russia Ukrain War (tentative) (
 
   - Introduction (10 min)
     - Why Virtual war?
@@ -28,7 +29,6 @@ For our team
     - Major Malware involved
     - Various hacking tools involved
     - kill chain of attacks
-    
-  - Detective measures (10 min)
     - Recomendations to Analysts/Security engineers
-    - Various yara rules
+    - Various yara rules for the malware discussed.
+  - Q&A (5 min)
