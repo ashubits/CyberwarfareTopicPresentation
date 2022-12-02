@@ -41,6 +41,10 @@ For our team
   - FiberLake, 
   - SonicVote CaddyWiper 
   - Industroyer2.
+  - Somnia. 
+  - RansomBoggs.
+  - CryWiper.
+  - Prestige
   
   
   
