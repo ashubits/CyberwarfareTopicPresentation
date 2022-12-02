@@ -36,4 +36,39 @@
 - HermeticWiper 
     •	912342F1C840A42F6B74132F8A7C4FFE7D40FB77 
     •	61B25D11392172E587D8DA3045812A66C3385451 
+    
+ - RECOMMENDATIONS
+  - HermeticWizard:  
+            •	Monitor traffic on the ports HermeticWizard uses to worm through networks. 
+
+            HermeticRansom (aka PartyTicket) has decryption instructions: 
+            •	According to researchers at CrowdStrike, HermeticRansom’s AES key used for encryption is recoverable. The Go script provided by CrowdStrike decrypts files encrypted by HermeticRansom.  
+            •	
+            o	The script takes the file to be decrypted as an argument via the “-p” flag and saves the decrypted output to “decrypted.bin” in the same directory. The script can be built as an executable or run via the Go run package.  
+
+
+            CISA’s recommendations apply for HermeticWiper (aka DriveSlayer), HermeticRansom, and IsaacWiper: 
+           - Regularly Review Your Cyber Hygiene 
+            
+            o	Validate that all remote access to the organization’s network and privileged or administrative access requires multi-factor authentication. 
+            o	Ensure that software is up to date, prioritizing updates that address known exploited vulnerabilities identified by CISA. 
+            o	Confirm that the organization’s IT personnel have disabled all ports and protocols that are not essential for business purposes. 
+            o	If the organization is using cloud services, ensure that IT personnel have reviewed and implemented strong controls outlined in CISA's guidance. 
+           - Quickly Detect a Potential Intrusion 
+            •	
+            o	Ensure that cybersecurity/IT personnel are focused on identifying and quickly assessing any unexpected or unusual network behavior. 
+            o	Enable logging in order to better investigate issues or events. 
+            o	Confirm that the organization's entire network is protected by antivirus/antimalware software and that signatures in these tools are updated. 
+            o	If working with Ukrainian organizations, take extra care to monitor, inspect, and isolate traffic from those organizations; closely review access controls for that traffic. 
+        - Prepare to Respond if an Intrusion Occurs 
+            •	
+            o	Designate a crisis-response team with main points of contact for a suspected cybersecurity incident and roles/ responsibilities within the organization, including technology, communications, legal, and business continuity. 
+            o	Assure availability of key personnel; identify means to provide surge support for responding to an incident. 
+            o	Conduct a tabletop exercise to ensure that all participants understand their roles during an incident. 
+           - Maximize Your Organization’s Resilience to a Destructive Cyber Incident 
+            •	
+            o	Test backup procedures to ensure that critical data can be rapidly restored if the organization is impacted by ransomware or a destructive cyberattack; ensure that backups are isolated from network connections. 
+            •	
+            o	If using industrial control systems or operational technology, conduct a test of manual controls to ensure that critical functions remain operable if the organization’s network is unavailable or untrusted. 
+
 
