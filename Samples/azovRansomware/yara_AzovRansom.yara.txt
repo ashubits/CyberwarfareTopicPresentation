@@ -1,0 +1,41 @@
+rule win64_azov_ransomware {
+
+    meta:
+        author = "Ashu Sharma"
+        date = "4-1-2023"
+        version = "1"
+        description = "Detects Win64/AzovRansomware which is fake ransomware and backdoor dropper with wiper fuctionality."
+        hash = "e0702e2e6d1d00da65c8a29a4ebacd0a4c59e1af"
+        
+
+    /* DISCLAIMER
+     * The strings used in this rule have been extracted from the decryptor of malicious code and the strings extracted from static file
+     */
+
+
+    strings:
+        $decryptor = { 48 C7 C1 ?? ?? ?? ?? 41 B9 13 5C 01 00 41 BA ?? ?? ?? ?? 48 FF C9 8A 40 ?? 44 30 CA 88 40 8 41 81 EA ?? ?? ?? ?? 45 01 D1 41 81 C1 ?? ?? ?? ?? 41 81 C2 ?? ?? ?? ?? 41 D1 C1 }
+            //  48:C7C1 E03F0000                   | mov rcx,3FE0                           | counter Variable
+			//	41:B9 135C0100                     | mov r9d,15C13                          | key
+			//	41:BA 00928192                     | mov r10d,92819200                      | seed initialization
+			//	48:FFC9                            | dec rcx                                |
+			//	8A1408                             | mov dl,byte ptr ds:[rax+rcx]           |
+			//	44:30CA                            | xor dl,r9b                             | decrption operation
+			//	881408                             | mov byte ptr ds:[rax+rcx],dl           | copying code in byte array
+			//	41:81EA E26F0200                   | sub r10d,26FE2                         |
+			//	45:01D1                            | add r9d,r10d                           | r9d:EntryPoint
+			//	41:81C1 E26F0200                   | add r9d,26FE2                          | r9d:EntryPoint
+			//	41:81C2 E26F0200                   | add r10d,26FE2                         |
+			//	41:D1C1                            | rol r9d,1                              | r9d:EntryPoint
+
+        $Patern1 = {21 00 41 00 7A 00 6F 00 76 00 20 00 72 00 61 00 6E 00 73 00 6F 00 6D 00 77 00 61 00 72 00 65 00 21}
+		// "Azov ransomware!" in Unicode
+		
+		$Patern2 = {5C 00 72 00 64 00 70 00 63 00 6C 00 69 00 65 00 6E 00 74 00 2E 00 65 00 78 00 65}
+			// "\rdpclient.exe" in unicode
+
+         
+
+    condition:
+        uint16(0) == 0x5a4d and pe.is_64bit() and $code and any of ($Patern*)
+}
