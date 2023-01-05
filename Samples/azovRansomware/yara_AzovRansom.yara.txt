@@ -5,7 +5,7 @@ rule win64_azov_ransomware {
         date = "4-1-2023"
         version = "1"
         description = "Detects Win64/AzovRansomware which is fake ransomware and backdoor dropper with wiper fuctionality."
-        hash = "e0702e2e6d1d00da65c8a29a4ebacd0a4c59e1af"
+        hash = "650f0d694c0928d88aeeed649cf629fc8a7bec604563bca716b1688227e0cc7e"
         
 
     /* DISCLAIMER
@@ -33,8 +33,7 @@ rule win64_azov_ransomware {
 		
 		$Patern2 = {5C 00 72 00 64 00 70 00 63 00 6C 00 69 00 65 00 6E 00 74 00 2E 00 65 00 78 00 65}
 			// "\rdpclient.exe" in unicode
-
-         
+        
 
     condition:
         uint16(0) == 0x5a4d and pe.is_64bit() and $code and any of ($Patern*)
